@@ -41,10 +41,11 @@ struct test parse_file(const char *path)
 	return (struct test){forward, backward};
 }
 
-void check(const char* path) {
+void check(const char *path)
+{
 	struct test test = parse_file(path);
 	size_t len = strlen(test.forward);
-	char* dest = malloc(len);
+	char *dest = malloc(len);
 	revcomp(test.forward, test.forward + len, dest);
 	if (strcmp(dest, test.backward) != 0) {
 		printf("'%s' != '%s'\n", dest, test.backward);

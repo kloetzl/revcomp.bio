@@ -1,5 +1,5 @@
 
-.PHONY: all build check clean print
+.PHONY: all build check clean print format
 
 all: build check
 
@@ -11,10 +11,8 @@ driver: revcomp.c driver.c
 check: driver
 	./driver
 
-print:
-	@ echo '```C'
-	@ cat revcomp.c
-	@ echo '```'
+format:
+	clang-format -i driver.c revcomp.c
 
 clean:
 	$(RM) driver
