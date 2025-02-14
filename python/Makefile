@@ -1,5 +1,5 @@
 
-.PHONY: all build check clean print
+.PHONY: all build check clean format
 
 all: build check
 
@@ -7,7 +7,5 @@ build clean driver:
 check:
 	./driver
 
-print:
-	@ echo '```Python'
-	@ cat revcomp.py
-	@ echo '```'
+format:
+	ruff format *py

@@ -3,10 +3,10 @@ LANGUAGES=python c
 CHECKLANGUAGES=$(LANGUAGES:%=check-%)
 CLEANLANGUAGES=$(LANGUAGES:%=clean-%)
 
-.PHONY: all clean implementations.md
+.PHONY: all clean check implementations.md
 
 all: $(LANGUAGES)
-$(LANGUAGES): $(CHECKLANGUAGES)
+$(LANGUAGES) check: $(CHECKLANGUAGES)
 clean: $(CLEANLANGUAGES)
 
 $(CHECKLANGUAGES):
@@ -18,7 +18,4 @@ $(CLEANLANGUAGES):
 	@$(MAKE) -C $(@:clean-%=%) clean
 
 implementations.md:
-	for lang in $(LANGUAGES); do \
-		$(MAKE) -C $$lang print; \
-		echo ''; \
-	done > $@
+	python3 web/build.py > $@

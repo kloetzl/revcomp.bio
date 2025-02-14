@@ -1,5 +1,5 @@
 
-.PHONY: all build check clean print format
+.PHONY: all build check clean format
 
 all: build check
 

@@ -11,7 +11,9 @@ def print_language(language: str) -> [str]:
     for line in cat(description):
         if line.startswith("&&&&"):
             implementation = f"{language}/{line.split()[1]}"
+            yield f"```{language}\n"
             yield from cat(implementation)
+            yield "```\n"
         else:
             yield line
 
