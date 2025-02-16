@@ -6,7 +6,9 @@ This project aims to be the definitive guide to computing the reverse complement
 
 We are always happy to accept proposals for implementations in other languages. Here are some technical and non-technical guidelines.
 
-- Here be dragons.
+- Use a common code formatter. For instance `ruff` and `clang-format` are used to format Python and C/C++ code, respectively.
+- Reading the input string in reverse and writing forward is faster on some CPUs than the other way round.
+- Using a lookup table will be about eight times faster than chaining if-elses.
 
 ## License
 

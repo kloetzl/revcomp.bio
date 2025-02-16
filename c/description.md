@@ -20,3 +20,4 @@ This implementation reads the input in reverse and writes forward as that is fas
 &&&& revcomp.c
 
 Contributed by: Fabian Klötzl, 2025
+
