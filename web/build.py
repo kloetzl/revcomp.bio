@@ -19,7 +19,7 @@ def print_language(language: str) -> [str]:
 
 
 def main():
-    languages = ["c", "python"]
+    languages = ["c", "python", "rust"]
     structure = [
         cat("web/header.md"),
         *(print_language(language) for language in languages),
