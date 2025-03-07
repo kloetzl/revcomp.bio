@@ -1,0 +1,13 @@
+[package]
+name = "revcomp"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+
+[dev-dependencies]
+criterion = { version = "*", default-features = false }
+
+[[bench]]
+name = "revcomp_benchmark"
+harness = false
