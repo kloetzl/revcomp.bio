@@ -6,7 +6,7 @@ all: build check
 build: driver
 
 driver: revcomp.c driver.c
-	$(CC) -O2 -std=c11 -Wall -Wextra -o $@ $^
+	$(CC) -O2 -std=c11 -D_GNU_SOURCE -Wall -Wextra -o $@ $^
 
 check: driver
 	./driver

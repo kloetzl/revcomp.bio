@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
 
 char *revcomp(const char *begin, const char *end, char *dest);
 
@@ -13,6 +14,7 @@ struct test {
 struct test parse_file(const char *path)
 {
 	FILE *file = fopen(path, "r");
+	assert(file);
 	char *line = malloc(9);
 	size_t linecap = 9;
 	ssize_t linelen = getline(&line, &linecap, file);
@@ -47,7 +49,7 @@ void check(const char *path)
 	size_t len = strlen(test.forward);
 	char *dest = malloc(len);
 	revcomp(test.forward, test.forward + len, dest);
-	if (strcmp(dest, test.backward) != 0) {
+	if (strncmp(dest, test.backward, len) != 0) {
 		printf("'%s' != '%s'\n", dest, test.backward);
 		assert(0);
 	}
