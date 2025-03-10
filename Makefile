@@ -1,4 +1,4 @@
-LANGUAGES=python c
+LANGUAGES=python c rust
 
 CHECKLANGUAGES=$(LANGUAGES:%=check-%)
 CLEANLANGUAGES=$(LANGUAGES:%=clean-%)
