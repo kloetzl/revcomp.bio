@@ -1,2 +1,6 @@
 # binaries
 c/driver
+
+__pycache__
+Cargo.lock
+target
